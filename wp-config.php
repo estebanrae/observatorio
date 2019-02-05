@@ -16,16 +16,16 @@
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define('DB_NAME', 'observatorio');
+define('DB_NAME', 'observ13_observatorio');
 
 /** Tu nombre de usuario de MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'observ13_usr');
 
 /** Tu contraseña de MySQL */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'YYC[]I;g2GY0');
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'localhost:3306');
 
 /** Codificación de caracteres para la base de datos. */
 define('DB_CHARSET', 'utf8mb4');
