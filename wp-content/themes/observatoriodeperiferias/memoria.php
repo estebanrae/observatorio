@@ -53,6 +53,7 @@ $the_query = new WP_Query( $args );
 <div class="memoria-inner-container">
 <?php
 require 'currPost.php';
+var_dump($offsetVal);
 getCurrentPost($offsetVal);
 ?>
 </div>
