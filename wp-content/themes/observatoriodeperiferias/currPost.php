@@ -6,6 +6,7 @@ function getCurrentPost(int $offset = 0){
 		'category_name' => 'memoria'
 	);
 	$the_query = new WP_Query( $args );
+	var_dump($the_query->have_posts())
 	if ( $the_query->have_posts() ) {
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 			the_content();

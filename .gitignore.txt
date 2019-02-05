@@ -1,2 +1,0 @@
-# ignore configuration file
-/wp-config.php
