@@ -36,7 +36,6 @@ $the_query = new WP_Query( $args );
   			echo "<a href='" . $current_url . "?offset=" . $i . "'>" . ($i + 1) . "</a>";
   		}
   	}
-  	echo $the_query->post_count;
 	?>
 	</div>
 	<?php
@@ -53,10 +52,19 @@ $the_query = new WP_Query( $args );
 </div>
 <div class="memoria-inner-container">
 <?php
+//require 'currPost.php';
 var_dump($offsetVal);
-require 'currPost.php';
-var_dump($offsetVal);
-getCurrentPost($offsetVal);
+$args = array(
+	'posts_per_page' => 1,
+	'offset' => $offsetVal,
+	'category_name' => 'memoria'
+);
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) : $the_query->the_post();
+		the_content();
+	endwhile;
+}
 ?>
 </div>
 </div>
