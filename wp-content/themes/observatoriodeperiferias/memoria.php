@@ -36,6 +36,7 @@ $the_query = new WP_Query( $args );
   			echo "<a href='" . $current_url . "?offset=" . $i . "'>" . ($i + 1) . "</a>";
   		}
   	}
+  	echo $the_query->post_count;
 	?>
 	</div>
 	<?php
@@ -52,6 +53,7 @@ $the_query = new WP_Query( $args );
 </div>
 <div class="memoria-inner-container">
 <?php
+var_dump($offsetVal);
 require 'currPost.php';
 var_dump($offsetVal);
 getCurrentPost($offsetVal);
