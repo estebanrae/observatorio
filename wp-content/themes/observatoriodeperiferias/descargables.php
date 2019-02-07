@@ -9,21 +9,7 @@ require 'menu.php';
 		<h1>Descargables</h1>
 	</div>
 <?php
-//require 'grid.php';
-/*
-$query_images_args = array(
-    'category' => 'downloadable',
-    'posts_per_page' => - 1,
-);
 
-$query_images = new WP_Query( $query_images_args );
-
-$images = array();
-foreach ( $query_images->posts as $key => $image ) {
-    echo $image;
-    
-}
-*/
 $args = array(
     'post_type' => 'attachment',
     //'type' => 'post',
@@ -44,11 +30,6 @@ if ($attachments) {
     		</a>
 		</div>
     	<?php
-    	//var_dump(get_attachment_link());
-       /* setup_postdata($post);
-        the_title();
-        the_attachment_link($post->ID, false);
-        the_excerpt();*/
     }
 }
 ?>

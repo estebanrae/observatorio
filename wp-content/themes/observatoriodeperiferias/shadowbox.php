@@ -1,4 +1,5 @@
 <div class="shadowbox-container" id="shadowbox-container">
+	<div class="cross">x</div>
 	<div class="left-container">
 		<div class="vid-container" id="vid-container">
 			<iframe allowfullscreen src=""></iframe>

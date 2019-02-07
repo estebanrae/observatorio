@@ -1,42 +1,3 @@
-
-/*fetch('https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyDdFqXQRf_6t1aTyhKXsSfHmlMXmNH9wio&part=snippet,contentDetails,statistics,status').then(function(response){
-  return response.json();
-}).then(function(json){
-  console.log(json);
-});*/
-/*
-var nextPage = null;
-var playlist = null;
-fetch('https://www.googleapis.com/youtube/v3/channels?id=UCfv5YWtQeUryyb4Y9cjLxMg&key=AIzaSyDdFqXQRf_6t1aTyhKXsSfHmlMXmNH9wio&part=snippet,contentDetails')
-.then(function(response){
-  return response.json();
-}).then(function(channel){
-  console.log(channel);
-  channel.items.forEach(function(v, k){
-    var playlistId = v.contentDetails.relatedPlaylists.uploads;
-    var nextPageToken = '';
-  fetch('https://www.googleapis.com/youtube/v3/playlistItems?playlistId=' + playlistId + '&pageToken=' + nextPageToken + '&key=AIzaSyDdFqXQRf_6t1aTyhKXsSfHmlMXmNH9wio&part=snippet,contentDetails&maxResults=4')
-    .then(function(response){
-      return response.json();
-    }).then(function(playlistItem){
-      playlist = playlistId;
-      nextPage = playlistItem.nextPageToken;
-      playlistItem.items.forEach(function(v1,k1){
-        fetch('https://www.googleapis.com/youtube/v3/videos?id=' + v1.contentDetails.videoId + '&key=AIzaSyDdFqXQRf_6t1aTyhKXsSfHmlMXmNH9wio&part=snippet,contentDetails')
-        .then(function(response){
-          return response.json();
-        }).then(function(video){
-          video.items.forEach(function(v2,k2){
-            $('#vid-' + k1).find('.title').html(v2.snippet.title);
-            $('#vid-' + k1).attr('data-vid', v2.id);
-            $('#vid-' + k1).find('.thumb').css('background-image', "url(" + v2.snippet.thumbnails.high.url + ")");
-          });
-        });
-      });
-    });
-  });
-});
-*/
 var total = 0;
 var pageNumber = 1;
 
@@ -71,6 +32,18 @@ $(document).ready(function(){
       selectToggle = 0;  
     }
   });
+
+  var toggle = true;
+
+  $(".menu-bars").click(function(e){
+    if(toggle){
+      $(".open-menu").show();
+    }else{
+      $(".open-menu").hide();
+    }
+    toggle = !toggle;
+  });
+
   $("#title-select li").click(function(e){
     pageNumber = 1;
     var pId = $(this).attr('data-value');
